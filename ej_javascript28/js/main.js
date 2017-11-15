@@ -4,7 +4,14 @@ window.onload = function(){
     var fechaFinal = new Date('12/20/2017');
     var diasRestantes = calcularDias(fechaFinal, fechaActual);
     console.log(diasRestantes);
+    
+    var vnumeros = diasRestantes.toString();
+    var par = document.getElementsByTagName('p')[0];
    
+    for(i=0, fin=vnumeros.length; i<fin; i++){
+        par.innerHTML += "<img src='img/"+vnumeros[i]+".png'>";
+    }
+    
 }
 
 //funcion que le pasas una fecha final y la fecha actual y devuelve los dias que quedan hasta esa fecha
@@ -21,6 +28,3 @@ function calcularDias(fechaF, fechaA){
     
 }
 
-function colocarImagenes(){
-
-}
