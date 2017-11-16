@@ -28,9 +28,9 @@ function generarPalabaAleatoria(arrayDePalabras){
 //funcion comprobar las fotos
 /* <img src = onError o onLoad */
 function comprobarFotos(numero){
-
-   for(i=0; i<numero.length;i++){
-
+    //bucle while 
+    
+   while(numero>0){
 
    }
 
