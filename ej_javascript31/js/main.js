@@ -1,17 +1,19 @@
 
 vidas =7;
-
+fallos = 0;
+var ruta = "img/" //ruta generica
+var debug = true // para imprimir en consola
 window.onload = function(){
-   
 
     var arrayPalabras = ["javascript", "ajax", "html", "css", "programación"];
 
-    var arrayImagenes = ["img/1.png", "img/2.png", "img/3.png", "img/4.png", "img/5.png", "img/6.png", "img/7.png"];
+    var arrayImagenes = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png"];
 
     var palabraGenerada = generarPalabaAleatoria(arrayPalabras);
-    
+
+    rellenarPalabra(palabraGenerada);
     colocarImagen();
-    comprobarFotos(arrayImagenes);
+
 
 }
 
@@ -20,47 +22,32 @@ window.onload = function(){
 //funcion que le pasas un arrary de palaras y te dvuelve una palabraaleatoria
 function generarPalabaAleatoria(arrayDePalabras){
 
-   
-
    var palabraAleatoria = Math.floor(Math.random()*arrayDePalabras.length);
-
-   
    return arrayDePalabras[palabraAleatoria];
 }
 
-/*funcion que le pasamos la ruta de la imagen y nos devuelve
-verdadero si carga la imagen y falso si no carga la imagen
-*/
-function comprobarFotos(ruta) {
+/* funcion relllenar palabra _ _ _ */
+function rellenarPalabra(palabra) {
 
-
-    var img = new Image();
-
-    img.onload = function () {
-        //alert("ok");
-        var ok = true;
-        console.log(ok);
-        return ok;
-    }
-    img.onerror = function () {
-        //alert("false");
-        var ok = false;
-        console.log(ok);
-        return ok;
-    }
-    for(i=0, fin =ruta.length;i<fin;i++){
-        img.src = ""+ruta[i];
-
+    var cogerPalabra = document.getElementById('palabraGenerada');
+    for(i=0, fin=palabra.length; i<fin;i++){
+        cogerPalabra.innerHTML +="_ ";
     }
 
 }
+
 // muestro la presentacion del juego
 function colocarImagen(){
     var cogerImagen = document.getElementsByTagName('img')[0];
     
-    cogerImagen.src="img/0.png";
+    cogerImagen.src= ruta+""+fallos+".png";
     
     var ponerVidas = document.getElementById('vidas');
     ponerVidas.textContent="Número de vidas: "+vidas; 
     
+}
+
+function cambiarImagen(fallos) {
+    var cogerImagen = document.getElementsByTagName('img')[0];
+    cogerImagen.src= ruta+""+fallos+".png";
 }
