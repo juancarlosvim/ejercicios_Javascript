@@ -3,29 +3,27 @@ vidas =7;
 fallos = 0;
 var ruta = "img/" //ruta generica
 var debug = true // para imprimir en consola
+var palabraAleatoriaGenerada = generarPalabaAleatoria();
 window.onload = function(){
 
-    var arrayPalabras = ["javascript", "ajax", "html", "css", "programacion"];
+
 
     var arrayImagenes = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png"];
 
-    var palabraGenerada = generarPalabaAleatoria(arrayPalabras);
 
 
-    rellenarPalabra(palabraGenerada);
+    rellenarPalabra(palabraAleatoriaGenerada);
     colocarImagen();
     accionBotones();
-
-
 
 
 }
 
 
 
-//funcion que le pasas un arrary de palaras y te dvuelve una palabraaleatoria
-function generarPalabaAleatoria(arrayDePalabras){
-
+//funcion que devuelve un una palabra aleatoria en el array
+function generarPalabaAleatoria(){
+    var arrayDePalabras = ["javascript", "ajax", "html", "css", "programacion"];
    var palabraAleatoria = Math.floor(Math.random()*arrayDePalabras.length);
    return arrayDePalabras[palabraAleatoria].toUpperCase();
 }
@@ -39,16 +37,27 @@ function  accionBotones() {
     }
 
 }
-/* funcion que da el valor cuando haces click en el boton */
+/* funcion que da el valor cuando haces click en el boton coge el valor del botón y comprueba que esté con la palabra generada */
+
 function botonesValor(e) {
+    var letra = e.target.value
+    var palabraAleatoria = palabraAleatoriaGenerada;
+    var posicion = palabraAleatoria.indexOf(letra);
+    var posiciones = [];
+
     if(debug){
-        //console.log(e.target.value);
+        console.log(letra);
+        console.log(palabraAleatoria);
+        console.log(posicion);
     }
-    var valorLetra = e.target.value;
-    if(debug){
-        console.log(valorLetra);
+    while(posicion != -1){
+        posiciones.push(posicion)
+        var posicion = palabraAleatoria.indexOf(letra, posicion+1);
+        if(debug){
+            console.log(posicion);
+        }
     }
-    return valorLetra;
+
 }
 
 /* funcion relllenar palabra _ _ _ */
@@ -60,6 +69,7 @@ function rellenarPalabra(palabra) {
     }
 
 }
+
 
 // muestro la presentacion del juego
 function colocarImagen(){
