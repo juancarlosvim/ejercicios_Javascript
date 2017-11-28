@@ -61,26 +61,26 @@ function botonesValor(e) {
     comprobarPalabra(letra, palabraAleatoria);
 }
 
-/* funcion para comprobarLaletra y pintarla */
+/* funcion para comprobarLaletra que recibe la letra y la palabraAleatoria */
 function comprobarPalabra(l, p) {
     var letra = l;
     var palaAl = p;
-
-    for(i=0, fin=p.length;i<fin;i++){
+    var pPintar = document.getElementById('palabraGenerada');
+    for(i=0, fin=palaAl.length;i<fin;i++){
         if(letra == palaAl.charAt(i)){
+
+            pPintar.textContent = pPintar.textContent.substring(0,i)+letra+pPintar.textContent.substring(i+1, pPintar.textContent.length);
             if(debug){
-                console.log(letra);
-                console.log(palaAl.charAt(i));
+                console.log(pPintar);
+                console.log(palaAl.length)
+                //console.log(letra);
+                //console.log(palaAl.charAt(i));
 
             }
 
         }
     }
 
-    if(debug==false){
-        console.log(letra);
-        console.log(palaAl);
-    }
 }
 
 
