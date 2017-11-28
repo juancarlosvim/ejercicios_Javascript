@@ -57,8 +57,33 @@ function botonesValor(e) {
             console.log(posicion);
         }
     }
-
+    //llamo a la funcion
+    comprobarPalabra(letra, palabraAleatoria);
 }
+
+/* funcion para comprobarLaletra y pintarla */
+function comprobarPalabra(l, p) {
+    var letra = l;
+    var palaAl = p;
+
+    for(i=0, fin=p.length;i<fin;i++){
+        if(letra == palaAl.charAt(i)){
+            if(debug){
+                console.log(letra);
+                console.log(palaAl.charAt(i));
+
+            }
+
+        }
+    }
+
+    if(debug==false){
+        console.log(letra);
+        console.log(palaAl);
+    }
+}
+
+
 
 /* funcion relllenar palabra _ _ _ */
 function rellenarPalabra(palabra) {
