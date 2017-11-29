@@ -1,0 +1,9 @@
+body{
+    background-color: cadetblue;
+}
+#formulario{
+    width: 60%;
+    padding: 2em;
+    margin: 0 auto;
+    background-color: lightgreen;
+}
