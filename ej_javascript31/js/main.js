@@ -52,6 +52,7 @@ function botonesValor(e) {
         console.log(palabraAleatoria);
         console.log(posicion);
     }
+    //montar un if y un sw para que entre
     while(posicion != -1){
         posiciones.push(posicion)
         var posicion = palabraAleatoria.indexOf(letra, posicion+1);
@@ -68,7 +69,9 @@ function comprobarPalabra(l, p) {
     var letra = l;
     var palaAl = p;
     var pPintar = document.getElementById('palabraGenerada');
-    for(i=0, fin=palaAl.length;i<fin;i++){
+    var pPalabrasFallidas = document.getElementById('letrasFallidas');
+
+        for(i=0, fin=palaAl.length;i<fin;i++){
         if(letra == palaAl.charAt(i)){
 
             pPintar.textContent = pPintar.textContent.substring(0,i)+letra+pPintar.textContent.substring(i+1, pPintar.textContent.length);
@@ -83,6 +86,11 @@ function comprobarPalabra(l, p) {
         }
 
     }
+
+    //arreglar las palabras fallidas
+    pPalabrasFallidas.textContent +=""+letra
+    console.log(pPalabrasFallidas);
+
 
 }
 
@@ -104,8 +112,6 @@ function colocarImagen(){
     var cogerImagen = document.getElementsByTagName('img')[0];
     
     cogerImagen.src= ruta+""+fallos+".png";
-    
-
     
 }
 // funcion que le entra el numero de vidas y lo actualiza
