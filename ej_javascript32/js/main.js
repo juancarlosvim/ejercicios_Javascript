@@ -36,6 +36,17 @@ function validar() {
     dni.addEventListener("change", function () {
         comprobarDni(dni);
     });
+
+    var correoElectronico = document.getElementsByName('idCorreoElectronico');
+
+    correoElectronico.addEventListener("change", function () {
+        comprobarCorreo(correoElectronico);
+    });
+
+    var localidad = document.getElementById('idLocalidad');
+    localidad.addEventListener("change", function () {
+        comprobarLocalidad(localidad);
+    })
 }
 
 // funcion que le pasasmos el nombre y le aplicamos dentro la expresion regular
@@ -44,7 +55,7 @@ function comprobarNombre(n) {
     var expresionNombre = /^([A-Z]{1}[a-zñáéíóú]+[\s]*)+$/;
 
     if(debug){
-        console.log ("comprobarNombre: "+cntNombre);
+        console.log ("comprobar "+cntNombre);
     }
 
     if(expresionNombre.test(cntNombre)==false){
@@ -66,11 +77,11 @@ function comprobarTelefono(t) {
     var expresionTelefono = /^[0-9]{9}$/;
 
     if(debug){
-        console.log ("comprobarNombre: "+cntTelefono);
+        console.log ("comprobar "+cntTelefono);
     }
 
     if(expresionTelefono.test(cntTelefono)==false){
-        t.value = "Nombre incorrecto";
+        t.value = "Teléfono incorrecto";
         t.style.color = ""+colorError;
         t.style.background = ""+fondoError;
     }else{
@@ -87,11 +98,11 @@ function comprobarDni(din) {
     var expresionDni = /^[0-9]{8}[A-Z]{1}$/;
 
     if(debug){
-        console.log ("comprobarNombre: "+cntDni);
+        console.log ("comprobar "+cntDni);
     }
 
     if(expresionDni.test(cntDni)==false){
-        din.value = "Nombre incorrecto";
+        din.value = "Dni incorrecto";
         din.style.color = ""+colorError;
         din.style.background = ""+fondoError;
     }else{
@@ -102,3 +113,44 @@ function comprobarDni(din) {
 
 }
 
+//funcion comprobar correoElectronico
+function comprobarCorreo(c) {
+    var cntCorreo = c.value;
+    var expresionCorreo = /^[A-Z, a-z, 0-9,_]*@[A-Z, a-z]*.[a-z,A-Z]{2,3}$/;
+
+    if(debug){
+        console.log ("comprobar "+cntCorreo);
+    }
+
+    if(expresionCorreo.test(cntCorreo)==false){
+        c.value = "Correo electrónico incorrecto";
+        c.style.color = ""+colorError;
+        c.style.background = ""+fondoError;
+    }else{
+        c.style.color = ""+colorCorrecto;
+        c.style.background = ""+fondoCorrecto;
+
+    }
+
+}
+
+
+function comprobarLocalidad(l) {
+    var cntLocalidad = c.value;
+    var expresionLocalidad = /^[A-Z]{1}[a-zñáéíóú]+[\s]$/;
+
+    if(debug){
+        console.log ("comprobar "+cntLocalidad);
+    }
+
+    if(expresionLocalidad.test(cntLocalidad)==false){
+        l.value = "Localidad incorrecta";
+        l.style.color = ""+colorError;
+        l.style.background = ""+fondoError;
+    }else{
+        l.style.color = ""+colorCorrecto;
+        l.style.background = ""+fondoCorrecto;
+
+    }
+
+}
