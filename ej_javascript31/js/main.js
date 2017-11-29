@@ -17,6 +17,8 @@ window.onload = function(){
     accionBotones();
 
 
+    var ponerVidas = document.getElementById('vidas');
+    ponerVidas.textContent="Número de vidas: "+vidas;
 }
 
 
@@ -57,7 +59,7 @@ function botonesValor(e) {
             console.log(posicion);
         }
     }
-    //llamo a la funcion
+
     comprobarPalabra(letra, palabraAleatoria);
 }
 
@@ -79,6 +81,7 @@ function comprobarPalabra(l, p) {
             }
 
         }
+
     }
 
 }
@@ -90,7 +93,7 @@ function rellenarPalabra(palabra) {
 
     var cogerPalabra = document.getElementById('palabraGenerada');
     for(i=0, fin=palabra.length; i<fin;i++){
-        cogerPalabra.innerHTML +="_ ";
+        cogerPalabra.innerHTML +="=";
     }
 
 }
@@ -102,9 +105,14 @@ function colocarImagen(){
     
     cogerImagen.src= ruta+""+fallos+".png";
     
-    var ponerVidas = document.getElementById('vidas');
-    ponerVidas.textContent="Número de vidas: "+vidas; 
+
     
+}
+// funcion que le entra el numero de vidas y lo actualiza
+function actualizarVidas(vidas) {
+    var ponerVidas = document.getElementById('vidas');
+    ponerVidas.textContent="Número de vidas: "+vidas;
+
 }
 
 function cambiarImagen(fallos) {

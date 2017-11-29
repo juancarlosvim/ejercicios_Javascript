@@ -3,3 +3,10 @@
     align-items: flex-end;
     justify-content: center;
 }
+
+p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 30%;
+}
