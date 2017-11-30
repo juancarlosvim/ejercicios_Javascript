@@ -8,7 +8,7 @@ var colorCorrecto = "#000000";
 var fondoCorrecto = "#FFFFFF";
 
 // noinspection JSAnnotator
-window.onload= function () {
+window.onload = function () {
     validar();
 }
 
@@ -37,7 +37,7 @@ function validar() {
         comprobarDni(dni);
     });
 
-    var correoElectronico = document.getElementsByName('idCorreoElectronico');
+    var correoElectronico = document.getElementById('idCorreoElectronico');
 
     correoElectronico.addEventListener("change", function () {
         comprobarCorreo(correoElectronico);
@@ -46,7 +46,7 @@ function validar() {
     var localidad = document.getElementById('idLocalidad');
     localidad.addEventListener("change", function () {
         comprobarLocalidad(localidad);
-    })
+    });
 }
 
 // funcion que le pasasmos el nombre y le aplicamos dentro la expresion regular
@@ -55,7 +55,7 @@ function comprobarNombre(n) {
     var expresionNombre = /^([A-Z]{1}[a-zñáéíóú]+[\s]*)+$/;
 
     if(debug){
-        console.log ("comprobar "+cntNombre);
+        console.log ("comprobar nombre "+cntNombre);
     }
 
     if(expresionNombre.test(cntNombre)==false){
@@ -77,7 +77,7 @@ function comprobarTelefono(t) {
     var expresionTelefono = /^[0-9]{9}$/;
 
     if(debug){
-        console.log ("comprobar "+cntTelefono);
+        console.log ("comprobar telefono "+cntTelefono);
     }
 
     if(expresionTelefono.test(cntTelefono)==false){
@@ -98,7 +98,7 @@ function comprobarDni(din) {
     var expresionDni = /^[0-9]{8}[A-Z]{1}$/;
 
     if(debug){
-        console.log ("comprobar "+cntDni);
+        console.log ("comprobar dni "+cntDni);
     }
 
     if(expresionDni.test(cntDni)==false){
@@ -119,7 +119,7 @@ function comprobarCorreo(c) {
     var expresionCorreo = /^[A-Z, a-z, 0-9,_]*@[A-Z, a-z]*.[a-z,A-Z]{2,3}$/;
 
     if(debug){
-        console.log ("comprobar "+cntCorreo);
+        console.log ("comprobar correo "+cntCorreo);
     }
 
     if(expresionCorreo.test(cntCorreo)==false){
@@ -136,11 +136,11 @@ function comprobarCorreo(c) {
 
 
 function comprobarLocalidad(l) {
-    var cntLocalidad = c.value;
+    var cntLocalidad = l.value;
     var expresionLocalidad = /^[A-Z]{1}[a-zñáéíóú]+[\s]$/;
 
     if(debug){
-        console.log ("comprobar "+cntLocalidad);
+        console.log ("comprobar localidad "+cntLocalidad);
     }
 
     if(expresionLocalidad.test(cntLocalidad)==false){
