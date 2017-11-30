@@ -5,7 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ej_javascript36</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/main.js"></script>
+    <title>ej_javascript33</title>
 </head>
 <body>
     <div id="formulario">
@@ -15,6 +17,50 @@
                 <p>
                     Nombre:
                     <input type="text" name="nombre" id="idNombre">
+                </p>
+
+                <p>
+                    Alias:
+                    <input type="text" name="alias" id="idAlias">
+                </p>
+                <p>
+                    Contraseña:
+                    <input type="password" name="contrasenia" id="idContrasenia">
+                </p>
+                <p>
+                    Repite Contraseña:
+                    <input type="password" name="rContrasenia" id="idrContrasenia">
+                </p>
+
+                <p>
+                    Sexo:
+                    (M)<input type="radio" name="sexo" value="masculino">
+                    (F)<input type="radio" name="sexo" value="femenino">
+                </p>
+
+                <p>
+                    Año nacimiento:
+                    <select>
+                        <!-- cargar los años desde javascript -->
+                    </select>
+                </p>
+
+                <p>
+                    Aficiones:
+                    <input type="checkbox" name="checkAficiones" id="checkMusica">Música
+                    <input type="checkbox" name="checkAficiones" id="checkInformatica">Informática
+                    <input type="checkbox" name="checkAficiones" id="checkCine">Cine
+                    <input type="checkbox" name="checkAficiones" id="checkTelevision">Televisión
+                    <input type="checkbox" name="checkAficiones" id="checkLectura">Lectura
+                    <input type="checkbox" name="checkAficiones" id="checkVideojuegos">Videojuegos
+
+                </p>
+
+                <p> * Todos los campos son obligatorios </p>
+
+                <p>
+                    <button type="button" id="btnEnviar">Enviar</button>
+                    <button type="reset" id="btnLimpiar">Limpiar</button>
                 </p>
 
             </fieldset>
