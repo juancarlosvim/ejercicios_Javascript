@@ -137,7 +137,7 @@ function comprobarCorreo(c) {
 
 function comprobarLocalidad(l) {
     var cntLocalidad = l.value;
-    var expresionLocalidad = /^[A-Z]{1}[a-zñáéíóú]+[\s]$/;
+    var expresionLocalidad = /^([A-Z]{1}[a-zñáéíóú]+[\s]*)+$/;
 
     if(debug){
         console.log ("comprobar localidad "+cntLocalidad);
