@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <title>ej_javascript35</title>
+</head>
+<body>
+    <div id="formulario">
+        <form action="" id="miFormulario">
+            <fieldset>
+                <legend>Datos de Inscripción</legend>
+                <p>
+                    Nombre:
+                    <input type="text" name="nombre" id="idNombre">
+                </p>
+
+                <p>
+                    Alias:
+                    <input type="text" name="alias" id="idAlias">
+                </p>
+                <p>
+                    Contraseña:
+                    <input type="text" name="contrasenia" id="idContrasenia">
+                </p>
+                <p>
+                    Repite Contraseña:
+                    <input type="text" name="reContrasenia" id="idReContrasenia">
+                </p>
+
+                <p>
+                    Sexo:
+                    (M)<input type="radio" name="sexo" value="masculino" id="idHombre">
+                    (F)<input type="radio" name="sexo" value="femenino" id="idMujer">
+                </p>
+
+                <p>
+                    Año nacimiento:
+                    <select id="fechaNacimiento">
+                        <!-- cargar los años desde javascript -->
+                    </select>
+                </p>
+                <div class="aficciones">
+
+
+                    <p>
+                        Aficiones:
+                    </p>
+                    <p>
+                        <input type="checkbox" name="checkAficiones" id="checkMusica">Música
+                        <input type="checkbox" name="checkAficiones" id="checkInformatica">Informática
+                        <input type="checkbox" name="checkAficiones" id="checkCine">Cine
+                    </p>
+                    <p>
+                        <input type="checkbox" name="checkAficiones" id="checkTelevision">Televisión
+                        <input type="checkbox" name="checkAficiones" id="checkLectura">Lectura
+                        <input type="checkbox" name="checkAficiones" id="checkVideojuegos">Videojuegos
+
+                    </p>
+                </div>
+
+                <p> * Todos los campos son obligatorios </p>
+
+                <p>
+                    <button type="button" id="btnEnviar">Enviar</button>
+                    <button type="reset" id="btnLimpiar">Limpiar</button>
+                </p>
+
+            </fieldset>
+
+
+
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
