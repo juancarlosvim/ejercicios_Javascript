@@ -25,36 +25,43 @@
                 </p>
                 <p>
                     Contraseña:
-                    <input type="password" name="contrasenia" id="idContrasenia">
+                    <input type="text" name="contrasenia" id="idContrasenia">
                 </p>
                 <p>
                     Repite Contraseña:
-                    <input type="password" name="rContrasenia" id="idrContrasenia">
+                    <input type="text" name="reContrasenia" id="idReContrasenia">
                 </p>
 
                 <p>
                     Sexo:
-                    (M)<input type="radio" name="sexo" value="masculino">
-                    (F)<input type="radio" name="sexo" value="femenino">
+                    (M)<input type="radio" name="sexo" value="masculino" id="idHombre">
+                    (F)<input type="radio" name="sexo" value="femenino" id="idMujer">
                 </p>
 
                 <p>
                     Año nacimiento:
-                    <select>
+                    <select id="fechaNacimiento">
                         <!-- cargar los años desde javascript -->
                     </select>
                 </p>
+                <div class="aficciones">
 
-                <p>
-                    Aficiones:
-                    <input type="checkbox" name="checkAficiones" id="checkMusica">Música
-                    <input type="checkbox" name="checkAficiones" id="checkInformatica">Informática
-                    <input type="checkbox" name="checkAficiones" id="checkCine">Cine
-                    <input type="checkbox" name="checkAficiones" id="checkTelevision">Televisión
-                    <input type="checkbox" name="checkAficiones" id="checkLectura">Lectura
-                    <input type="checkbox" name="checkAficiones" id="checkVideojuegos">Videojuegos
 
-                </p>
+                    <p>
+                        Aficiones:
+                    </p>
+                    <p>
+                        <input type="checkbox" name="checkAficiones" id="checkMusica">Música
+                        <input type="checkbox" name="checkAficiones" id="checkInformatica">Informática
+                        <input type="checkbox" name="checkAficiones" id="checkCine">Cine
+                    </p>
+                    <p>
+                        <input type="checkbox" name="checkAficiones" id="checkTelevision">Televisión
+                        <input type="checkbox" name="checkAficiones" id="checkLectura">Lectura
+                        <input type="checkbox" name="checkAficiones" id="checkVideojuegos">Videojuegos
+
+                    </p>
+                </div>
 
                 <p> * Todos los campos son obligatorios </p>
 
