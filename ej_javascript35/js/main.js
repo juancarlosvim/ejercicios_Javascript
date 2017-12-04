@@ -1,10 +1,4 @@
 
-/*
- Te digo donde falla
-
-
-
- */
 debug = true //imprimir console.log y alert
 validado = [false, false, false, false, false]; // para validar todos los campos
 btnEnviar = document.getElementById('btnEnviar');
@@ -181,14 +175,6 @@ function comprobarCheckbox(nombre) {
             }
         });
     }
-    /*function comprobarClick() {
-
-        for(i=0;i<longitud;i++){
-            if(comprobacion[i].checked==true){
-                retorno = true
-            }
-        }
-    }*/
     if(debug){
         console.log("retorno "+retorno);
     }
