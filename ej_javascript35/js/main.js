@@ -155,8 +155,7 @@ function comprobarFormulario(boton) {
  */
 
 function comprobarCheckbox(nombre) {
-    // Aqui si le pasas el boton necesitamos llamar al boton y el boton esta en la funcion validar
-    // tendrias que poner el boton como variable global, sin el var
+
     var comprobacion = document.getElementsByName(nombre);
     var longitud = comprobacion.length;
     var retorno = false;
