@@ -1,0 +1,22 @@
+body{
+    background-color: cadetblue;
+}
+
+#dvFormulario{
+    width: 60%;
+    padding: 2em;
+    margin: auto;
+    background-color: lightgreen;
+}
+.aficciones{
+    background-color: greenyellow;
+}
+.error{
+    color: #F00;
+    background-color: #FF0;
+    font-weight: bold;
+}
+.correcto{
+    color: #000;
+    background-color: #fff;
+}
